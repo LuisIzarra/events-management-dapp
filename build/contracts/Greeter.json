@@ -1,0 +1,1291 @@
+{
+  "contractName": "Greeter",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_greeting",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "greet",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_greeting",
+          "type": "string"
+        }
+      ],
+      "name": "setGreeting",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_greeting\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"greet\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"_greeting\",\"type\":\"string\"}],\"name\":\"setGreeting\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Migrations.sol\":\"Greeter\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"hardhat/console.sol\":{\"keccak256\":\"0x72b6a1d297cd3b033d7c2e4a7e7864934bb767db6453623f1c3082c6534547f4\",\"urls\":[\"bzz-raw://a8cb8681076e765c214e0d51cac989325f6b98e315eaae06ee0cbd5a9f084763\",\"dweb:/ipfs/QmNWGHi4zmjxQTYN3NMGnJd49jBT5dE4bxTdWEaDuJrC6N\"]},\"project:/contracts/Migrations.sol\":{\"keccak256\":\"0x19f104f10d0e0f200ce507fe774077d0d1a109577b6d47b8607b1ab4a527d0d5\",\"urls\":[\"bzz-raw://31a00942a9c9822ab8f790f8c6dc4f395bd3aba0aca00223e729bdb295a0a799\",\"dweb:/ipfs/QmVv8dBAkMdxxf2qPZ6te1ust2X8uK7bNhNrrQeHohKapS\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610b06380380610b068339818101604052602081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b5060405250505061011a604051806060016040528060228152602001610ae4602291398261013760201b61059a1760201c565b80600090805190602001906101309291906102d2565b5050610377565b6102a58282604051602401808060200180602001838103835285818151815260200191508051906020019080838360005b83811015610183578082015181840152602081019050610168565b50505050905090810190601f1680156101b05780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b838110156101e95780820151818401526020810190506101ce565b50505050905090810190601f1680156102165780820380516001836020036101000a031916815260200191505b509450505050506040516020818303038152906040527f4b5c4277000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506102a960201b60201c565b5050565b60008151905060006a636f6e736f6c652e6c6f679050602083016000808483855afa5050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031357805160ff1916838001178555610341565b82800160010185558215610341579182015b82811115610340578251825591602001919060010190610325565b5b50905061034e9190610352565b5090565b61037491905b80821115610370576000816000905550600101610358565b5090565b90565b61075e806103866000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063a41368621461003b578063cfae3217146100f6575b600080fd5b6100f46004803603602081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610179565b005b6100fe610250565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013e578082015181840152602081019050610123565b50505050905090810190601f16801561016b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6102366040518060600160405280602381526020016107076023913960008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022b5780601f106102005761010080835404028352916020019161022b565b820191906000526020600020905b81548152906001019060200180831161020e57829003601f168201915b5050505050836102f2565b806000908051906020019061024c9291906104f5565b5050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102e85780601f106102bd576101008083540402835291602001916102e8565b820191906000526020600020905b8154815290600101906020018083116102cb57829003601f168201915b5050505050905090565b6104c783838360405160240180806020018060200180602001848103845287818151815260200191508051906020019080838360005b83811015610343578082015181840152602081019050610328565b50505050905090810190601f1680156103705780820380516001836020036101000a031916815260200191505b50848103835286818151815260200191508051906020019080838360005b838110156103a957808201518184015260208101905061038e565b50505050905090810190601f1680156103d65780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b8381101561040f5780820151818401526020810190506103f4565b50505050905090810190601f16801561043c5780820380516001836020036101000a031916815260200191505b5096505050505050506040516020818303038152906040527f2ced7cef000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506104cc565b505050565b60008151905060006a636f6e736f6c652e6c6f679050602083016000808483855afa5050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061053657805160ff1916838001178555610564565b82800160010185558215610564579182015b82811115610563578251825591602001919060010190610548565b5b5090506105719190610575565b5090565b61059791905b8082111561059357600081600090555060010161057b565b5090565b90565b6107028282604051602401808060200180602001838103835285818151815260200191508051906020019080838360005b838110156105e65780820151818401526020810190506105cb565b50505050905090810190601f1680156106135780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b8381101561064c578082015181840152602081019050610631565b50505050905090810190601f1680156106795780820380516001836020036101000a031916815260200191505b509450505050506040516020818303038152906040527f4b5c4277000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506104cc565b505056fe4368616e67696e67206772656574696e672066726f6d202725732720746f2027257327a265627a7a723158206f80d7724e594cd1ac93cbbee6ef7edc3199b28fe673799c7aa61160227ac34564736f6c634300051000324465706c6f79696e67206120477265657465722077697468206772656574696e673a",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063a41368621461003b578063cfae3217146100f6575b600080fd5b6100f46004803603602081101561005157600080fd5b810190808035906020019064010000000081111561006e57600080fd5b82018360208201111561008057600080fd5b803590602001918460018302840111640100000000831117156100a257600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610179565b005b6100fe610250565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561013e578082015181840152602081019050610123565b50505050905090810190601f16801561016b5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6102366040518060600160405280602381526020016107076023913960008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561022b5780601f106102005761010080835404028352916020019161022b565b820191906000526020600020905b81548152906001019060200180831161020e57829003601f168201915b5050505050836102f2565b806000908051906020019061024c9291906104f5565b5050565b606060008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102e85780601f106102bd576101008083540402835291602001916102e8565b820191906000526020600020905b8154815290600101906020018083116102cb57829003601f168201915b5050505050905090565b6104c783838360405160240180806020018060200180602001848103845287818151815260200191508051906020019080838360005b83811015610343578082015181840152602081019050610328565b50505050905090810190601f1680156103705780820380516001836020036101000a031916815260200191505b50848103835286818151815260200191508051906020019080838360005b838110156103a957808201518184015260208101905061038e565b50505050905090810190601f1680156103d65780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b8381101561040f5780820151818401526020810190506103f4565b50505050905090810190601f16801561043c5780820380516001836020036101000a031916815260200191505b5096505050505050506040516020818303038152906040527f2ced7cef000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506104cc565b505050565b60008151905060006a636f6e736f6c652e6c6f679050602083016000808483855afa5050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061053657805160ff1916838001178555610564565b82800160010185558215610564579182015b82811115610563578251825591602001919060010190610548565b5b5090506105719190610575565b5090565b61059791905b8082111561059357600081600090555060010161057b565b5090565b90565b6107028282604051602401808060200180602001838103835285818151815260200191508051906020019080838360005b838110156105e65780820151818401526020810190506105cb565b50505050905090810190601f1680156106135780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b8381101561064c578082015181840152602081019050610631565b50505050905090810190601f1680156106795780820380516001836020036101000a031916815260200191505b509450505050506040516020818303038152906040527f4b5c4277000000000000000000000000000000000000000000000000000000007bffffffffffffffffffffffffffffffffffffffffffffffffffffffff19166020820180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff83818316178352505050506104cc565b505056fe4368616e67696e67206772656574696e672066726f6d202725732720746f2027257327a265627a7a723158206f80d7724e594cd1ac93cbbee6ef7edc3199b28fe673799c7aa61160227ac34564736f6c63430005100032",
+  "sourceMap": "535:466:1:-;;;580:151;8:9:-1;5:2;;;30:1;27;20:12;5:2;580:151:1;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;580:151:1;;;;;;;;;;;;;19:11:-1;14:3;11:20;8:2;;;44:1;41;34:12;8:2;71:11;66:3;62:21;55:28;;123:4;118:3;114:14;159:9;141:16;138:31;135:2;;;182:1;179;172:12;135:2;219:3;213:10;330:9;325:1;311:12;307:20;289:16;285:43;282:58;261:11;247:12;244:29;233:115;230:2;;;361:1;358;351:12;230:2;384:12;379:3;372:25;420:4;415:3;411:14;404:21;;0:432;;580:151:1;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;580:151:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;634:60;;;;;;;;;;;;;;;;;;684:9;634:11;;;;;:60;;:::i;:::-;715:9;704:8;:20;;;;;;;;;;;;:::i;:::-;;580:151;535:466;;6021:141:0;6088:70;6150:2;6154;6104:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;6104:53:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;6104:53:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;6104:53:0;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;6104:53:0;6088:15;;;:70;;:::i;:::-;6021:141;;:::o;176:288::-;240:21;264:7;:14;240:38;;282:22;129:42;282:40;;373:2;364:7;360:16;455:1;452;437:13;423:12;407:14;400:5;389:68;335:126;;;;;:::o;535:466:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "535:466:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;535:466:1;;;;;;;;;;;;;;;;;;;;;;;;828:171;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;828:171:1;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;828:171:1;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;828:171:1;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;828:171:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;828:171:1;;;;;;;;;;;;;;;:::i;:::-;;737:85;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;737:85:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;828:171;891:71;;;;;;;;;;;;;;;;;;942:8;891:71;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;952:9;891:11;:71::i;:::-;983:9;972:8;:20;;;;;;;;;;;;:::i;:::-;;828:171;:::o;737:85::-;775:13;807:8;800:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;737:85;:::o;10630:170:0:-;10715:81;10784:2;10788;10792;10731:64;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;10731:64:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;10731:64:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;10731:64:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;10731:64:0;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;10731:64:0;10715:15;:81::i;:::-;10630:170;;;:::o;176:288::-;240:21;264:7;:14;240:38;;282:22;129:42;282:40;;373:2;364:7;360:16;455:1;452;437:13;423:12;407:14;400:5;389:68;335:126;;;;;:::o;535:466:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;6021:141:0:-;6088:70;6150:2;6154;6104:53;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;6104:53:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;6104:53:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;6104:53:0;;;;;;;38:4:-1;29:7;25:18;67:10;61:17;96:58;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;6104:53:0;6088:15;:70::i;:::-;6021:141;;:::o",
+  "source": "// pragma solidity >=0.4.22 <0.9.0;\n\n// contract Migrations {\n//   address public owner = msg.sender;\n//   uint public last_completed_migration;\n\n//   modifier restricted() {\n//     require(\n//       msg.sender == owner,\n//       \"This function is restricted to the contract's owner\"\n//     );\n//     _;\n//   }\n\n//   function setCompleted(uint completed) public restricted {\n//     last_completed_migration = completed;\n//   }\n// }\n\n//SPDX-License-Identifier: Unlicense\npragma solidity >=0.4.22 <0.9.0;\n\nimport \"hardhat/console.sol\";\n\ncontract Greeter {\n    string greeting;\n\n    constructor(string memory _greeting) public {\n        console.log(\"Deploying a Greeter with greeting:\", _greeting);\n        greeting = _greeting;\n    }\n\n    function greet() public view returns (string memory) {\n        return greeting;\n    }\n\n    function setGreeting(string memory _greeting) public {\n        console.log(\"Changing greeting from '%s' to '%s'\", greeting, _greeting);\n        greeting = _greeting;\n    }\n}\n",
+  "sourcePath": "/Users/luisrodriguez/full-stack-ethereum-development/contracts/Migrations.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Migrations.sol",
+    "exportedSymbols": {
+      "Greeter": [
+        8111
+      ]
+    },
+    "id": 8112,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8064,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "470:32:1"
+      },
+      {
+        "absolutePath": "hardhat/console.sol",
+        "file": "hardhat/console.sol",
+        "id": 8065,
+        "nodeType": "ImportDirective",
+        "scope": 8112,
+        "sourceUnit": 8063,
+        "src": "504:29:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 8111,
+        "linearizedBaseContracts": [
+          8111
+        ],
+        "name": "Greeter",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 8067,
+            "name": "greeting",
+            "nodeType": "VariableDeclaration",
+            "scope": 8111,
+            "src": "558:15:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 8066,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "558:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 8083,
+              "nodeType": "Block",
+              "src": "624:107:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4465706c6f79696e67206120477265657465722077697468206772656574696e673a",
+                        "id": 8075,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "646:36:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_43eba967c0d12a4a95776936bd3153ea0284f34362452942fba796fe98de38fa",
+                          "typeString": "literal_string \"Deploying a Greeter with greeting:\""
+                        },
+                        "value": "Deploying a Greeter with greeting:"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 8076,
+                        "name": "_greeting",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8069,
+                        "src": "684:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_43eba967c0d12a4a95776936bd3153ea0284f34362452942fba796fe98de38fa",
+                          "typeString": "literal_string \"Deploying a Greeter with greeting:\""
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 8072,
+                        "name": "console",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8062,
+                        "src": "634:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_console_$8062_$",
+                          "typeString": "type(library console)"
+                        }
+                      },
+                      "id": 8074,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "log",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 723,
+                      "src": "634:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory) view"
+                      }
+                    },
+                    "id": 8077,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "634:60:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8078,
+                  "nodeType": "ExpressionStatement",
+                  "src": "634:60:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 8081,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 8079,
+                      "name": "greeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8067,
+                      "src": "704:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 8080,
+                      "name": "_greeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8069,
+                      "src": "715:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "704:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 8082,
+                  "nodeType": "ExpressionStatement",
+                  "src": "704:20:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8084,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8070,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8069,
+                  "name": "_greeting",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8084,
+                  "src": "592:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8068,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "592:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "591:25:1"
+            },
+            "returnParameters": {
+              "id": 8071,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "624:0:1"
+            },
+            "scope": 8111,
+            "src": "580:151:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 8091,
+              "nodeType": "Block",
+              "src": "790:32:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 8089,
+                    "name": "greeting",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 8067,
+                    "src": "807:8:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 8088,
+                  "id": 8090,
+                  "nodeType": "Return",
+                  "src": "800:15:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8092,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "greet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8085,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "751:2:1"
+            },
+            "returnParameters": {
+              "id": 8088,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8087,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8092,
+                  "src": "775:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8086,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "775:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "774:15:1"
+            },
+            "scope": 8111,
+            "src": "737:85:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 8109,
+              "nodeType": "Block",
+              "src": "881:118:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4368616e67696e67206772656574696e672066726f6d202725732720746f2027257327",
+                        "id": 8100,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "903:37:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_11ffbb9e62065625eb0614fd1cce048e8dd44df393597cc4b3f39f2eddf6b82f",
+                          "typeString": "literal_string \"Changing greeting from '%s' to '%s'\""
+                        },
+                        "value": "Changing greeting from '%s' to '%s'"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 8101,
+                        "name": "greeting",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8067,
+                        "src": "942:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 8102,
+                        "name": "_greeting",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8094,
+                        "src": "952:9:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_11ffbb9e62065625eb0614fd1cce048e8dd44df393597cc4b3f39f2eddf6b82f",
+                          "typeString": "literal_string \"Changing greeting from '%s' to '%s'\""
+                        },
+                        {
+                          "typeIdentifier": "t_string_storage",
+                          "typeString": "string storage ref"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 8097,
+                        "name": "console",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8062,
+                        "src": "891:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_console_$8062_$",
+                          "typeString": "type(library console)"
+                        }
+                      },
+                      "id": 8099,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "log",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1333,
+                      "src": "891:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory) view"
+                      }
+                    },
+                    "id": 8103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "891:71:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 8104,
+                  "nodeType": "ExpressionStatement",
+                  "src": "891:71:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 8107,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 8105,
+                      "name": "greeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8067,
+                      "src": "972:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage",
+                        "typeString": "string storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 8106,
+                      "name": "_greeting",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8094,
+                      "src": "983:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_memory_ptr",
+                        "typeString": "string memory"
+                      }
+                    },
+                    "src": "972:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage",
+                      "typeString": "string storage ref"
+                    }
+                  },
+                  "id": 8108,
+                  "nodeType": "ExpressionStatement",
+                  "src": "972:20:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 8110,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGreeting",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8095,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 8094,
+                  "name": "_greeting",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 8110,
+                  "src": "849:23:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 8093,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "849:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "848:25:1"
+            },
+            "returnParameters": {
+              "id": 8096,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "881:0:1"
+            },
+            "scope": 8111,
+            "src": "828:171:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8112,
+        "src": "535:466:1"
+      }
+    ],
+    "src": "470:532:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/Migrations.sol",
+      "exportedSymbols": {
+        "Greeter": [
+          8111
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 8064,
+        "name": "PragmaDirective",
+        "src": "470:32:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 8063,
+          "absolutePath": "hardhat/console.sol",
+          "file": "hardhat/console.sol",
+          "scope": 8112,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 8065,
+        "name": "ImportDirective",
+        "src": "504:29:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            8111
+          ],
+          "name": "Greeter",
+          "scope": 8112
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "greeting",
+              "scope": 8111,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "value": null,
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 8066,
+                "name": "ElementaryTypeName",
+                "src": "558:6:1"
+              }
+            ],
+            "id": 8067,
+            "name": "VariableDeclaration",
+            "src": "558:15:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 8111,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_greeting",
+                      "scope": 8084,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 8068,
+                        "name": "ElementaryTypeName",
+                        "src": "592:6:1"
+                      }
+                    ],
+                    "id": 8069,
+                    "name": "VariableDeclaration",
+                    "src": "592:23:1"
+                  }
+                ],
+                "id": 8070,
+                "name": "ParameterList",
+                "src": "591:25:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8071,
+                "name": "ParameterList",
+                "src": "624:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_43eba967c0d12a4a95776936bd3153ea0284f34362452942fba796fe98de38fa",
+                                  "typeString": "literal_string \"Deploying a Greeter with greeting:\""
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "log",
+                              "referencedDeclaration": 723,
+                              "type": "function (string memory,string memory) view"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 8062,
+                                  "type": "type(library console)",
+                                  "value": "console"
+                                },
+                                "id": 8072,
+                                "name": "Identifier",
+                                "src": "634:7:1"
+                              }
+                            ],
+                            "id": 8074,
+                            "name": "MemberAccess",
+                            "src": "634:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4465706c6f79696e67206120477265657465722077697468206772656574696e673a",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Deploying a Greeter with greeting:\"",
+                              "value": "Deploying a Greeter with greeting:"
+                            },
+                            "id": 8075,
+                            "name": "Literal",
+                            "src": "646:36:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8069,
+                              "type": "string memory",
+                              "value": "_greeting"
+                            },
+                            "id": 8076,
+                            "name": "Identifier",
+                            "src": "684:9:1"
+                          }
+                        ],
+                        "id": 8077,
+                        "name": "FunctionCall",
+                        "src": "634:60:1"
+                      }
+                    ],
+                    "id": 8078,
+                    "name": "ExpressionStatement",
+                    "src": "634:60:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8067,
+                              "type": "string storage ref",
+                              "value": "greeting"
+                            },
+                            "id": 8079,
+                            "name": "Identifier",
+                            "src": "704:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8069,
+                              "type": "string memory",
+                              "value": "_greeting"
+                            },
+                            "id": 8080,
+                            "name": "Identifier",
+                            "src": "715:9:1"
+                          }
+                        ],
+                        "id": 8081,
+                        "name": "Assignment",
+                        "src": "704:20:1"
+                      }
+                    ],
+                    "id": 8082,
+                    "name": "ExpressionStatement",
+                    "src": "704:20:1"
+                  }
+                ],
+                "id": 8083,
+                "name": "Block",
+                "src": "624:107:1"
+              }
+            ],
+            "id": 8084,
+            "name": "FunctionDefinition",
+            "src": "580:151:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "greet",
+              "scope": 8111,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8085,
+                "name": "ParameterList",
+                "src": "751:2:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 8092,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 8086,
+                        "name": "ElementaryTypeName",
+                        "src": "775:6:1"
+                      }
+                    ],
+                    "id": 8087,
+                    "name": "VariableDeclaration",
+                    "src": "775:13:1"
+                  }
+                ],
+                "id": 8088,
+                "name": "ParameterList",
+                "src": "774:15:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 8088
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 8067,
+                          "type": "string storage ref",
+                          "value": "greeting"
+                        },
+                        "id": 8089,
+                        "name": "Identifier",
+                        "src": "807:8:1"
+                      }
+                    ],
+                    "id": 8090,
+                    "name": "Return",
+                    "src": "800:15:1"
+                  }
+                ],
+                "id": 8091,
+                "name": "Block",
+                "src": "790:32:1"
+              }
+            ],
+            "id": 8092,
+            "name": "FunctionDefinition",
+            "src": "737:85:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "setGreeting",
+              "scope": 8111,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_greeting",
+                      "scope": 8110,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 8093,
+                        "name": "ElementaryTypeName",
+                        "src": "849:6:1"
+                      }
+                    ],
+                    "id": 8094,
+                    "name": "VariableDeclaration",
+                    "src": "849:23:1"
+                  }
+                ],
+                "id": 8095,
+                "name": "ParameterList",
+                "src": "848:25:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8096,
+                "name": "ParameterList",
+                "src": "881:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_stringliteral_11ffbb9e62065625eb0614fd1cce048e8dd44df393597cc4b3f39f2eddf6b82f",
+                                  "typeString": "literal_string \"Changing greeting from '%s' to '%s'\""
+                                },
+                                {
+                                  "typeIdentifier": "t_string_storage",
+                                  "typeString": "string storage ref"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "log",
+                              "referencedDeclaration": 1333,
+                              "type": "function (string memory,string memory,string memory) view"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 8062,
+                                  "type": "type(library console)",
+                                  "value": "console"
+                                },
+                                "id": 8097,
+                                "name": "Identifier",
+                                "src": "891:7:1"
+                              }
+                            ],
+                            "id": 8099,
+                            "name": "MemberAccess",
+                            "src": "891:11:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "4368616e67696e67206772656574696e672066726f6d202725732720746f2027257327",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Changing greeting from '%s' to '%s'\"",
+                              "value": "Changing greeting from '%s' to '%s'"
+                            },
+                            "id": 8100,
+                            "name": "Literal",
+                            "src": "903:37:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8067,
+                              "type": "string storage ref",
+                              "value": "greeting"
+                            },
+                            "id": 8101,
+                            "name": "Identifier",
+                            "src": "942:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8094,
+                              "type": "string memory",
+                              "value": "_greeting"
+                            },
+                            "id": 8102,
+                            "name": "Identifier",
+                            "src": "952:9:1"
+                          }
+                        ],
+                        "id": 8103,
+                        "name": "FunctionCall",
+                        "src": "891:71:1"
+                      }
+                    ],
+                    "id": 8104,
+                    "name": "ExpressionStatement",
+                    "src": "891:71:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "string storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8067,
+                              "type": "string storage ref",
+                              "value": "greeting"
+                            },
+                            "id": 8105,
+                            "name": "Identifier",
+                            "src": "972:8:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 8094,
+                              "type": "string memory",
+                              "value": "_greeting"
+                            },
+                            "id": 8106,
+                            "name": "Identifier",
+                            "src": "983:9:1"
+                          }
+                        ],
+                        "id": 8107,
+                        "name": "Assignment",
+                        "src": "972:20:1"
+                      }
+                    ],
+                    "id": 8108,
+                    "name": "ExpressionStatement",
+                    "src": "972:20:1"
+                  }
+                ],
+                "id": 8109,
+                "name": "Block",
+                "src": "881:118:1"
+              }
+            ],
+            "id": 8110,
+            "name": "FunctionDefinition",
+            "src": "828:171:1"
+          }
+        ],
+        "id": 8111,
+        "name": "ContractDefinition",
+        "src": "535:466:1"
+      }
+    ],
+    "id": 8112,
+    "name": "SourceUnit",
+    "src": "470:532:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-11-06T22:45:06.716Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
