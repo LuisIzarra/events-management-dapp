@@ -5,7 +5,7 @@ Here's how to deploy this project
 1. Clone the repo
 
 ```sh
-git clone https://github.com/LuisIzarra/full-stack-ethereum-develoment.git
+git clone https://github.com/LuisIzarra/events-management-dapp.git
 ```
 
 2. Install the dependencies
@@ -38,5 +38,5 @@ npx hardhat run scripts/deploy.js --network localhost
 6. Run the app
 
 ```sh
-npm start
+npm run start
 ```
