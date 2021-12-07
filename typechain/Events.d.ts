@@ -23,7 +23,8 @@ interface EventsInterface extends ethers.utils.Interface {
   functions: {
     "createEvent(string,string)": FunctionFragment;
     "events(uint256)": FunctionFragment;
-    "findEventByID(string)": FunctionFragment;
+    "eventsMap(string)": FunctionFragment;
+    "findEventById(string)": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -34,8 +35,9 @@ interface EventsInterface extends ethers.utils.Interface {
     functionFragment: "events",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "eventsMap", values: [string]): string;
   encodeFunctionData(
-    functionFragment: "findEventByID",
+    functionFragment: "findEventById",
     values: [string]
   ): string;
 
@@ -44,8 +46,9 @@ interface EventsInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "events", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "eventsMap", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "findEventByID",
+    functionFragment: "findEventById",
     data: BytesLike
   ): Result;
 
@@ -97,13 +100,13 @@ export class Events extends Contract {
 
   functions: {
     createEvent(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
     "createEvent(string,string)"(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
@@ -111,32 +114,54 @@ export class Events extends Contract {
     events(
       arg0: BigNumberish,
       overrides?: CallOverrides
-    ): Promise<[string, string] & { ID: string; Name: string }>;
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
 
     "events(uint256)"(
       arg0: BigNumberish,
       overrides?: CallOverrides
-    ): Promise<[string, string] & { ID: string; Name: string }>;
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
 
-    findEventByID(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
+    eventsMap(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
 
-    "findEventByID(string)"(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
+    "eventsMap(string)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
+
+    findEventById(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
+
+    "findEventById(string)"(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
   };
 
   createEvent(
-    _ID: string,
+    _id: string,
     _name: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
   "createEvent(string,string)"(
-    _ID: string,
+    _id: string,
     _name: string,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
@@ -144,32 +169,54 @@ export class Events extends Contract {
   events(
     arg0: BigNumberish,
     overrides?: CallOverrides
-  ): Promise<[string, string] & { ID: string; Name: string }>;
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
 
   "events(uint256)"(
     arg0: BigNumberish,
     overrides?: CallOverrides
-  ): Promise<[string, string] & { ID: string; Name: string }>;
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
 
-  findEventByID(
-    _eventID: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
+  eventsMap(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
 
-  "findEventByID(string)"(
-    _eventID: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
+  "eventsMap(string)"(
+    arg0: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
+
+  findEventById(
+    _eventId: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
+
+  "findEventById(string)"(
+    _eventId: string,
+    overrides?: CallOverrides
+  ): Promise<
+    [string, string, boolean] & { id: string; name: string; exists: boolean }
+  >;
 
   callStatic: {
     createEvent(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
     "createEvent(string,string)"(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: CallOverrides
     ): Promise<void>;
@@ -177,32 +224,57 @@ export class Events extends Contract {
     events(
       arg0: BigNumberish,
       overrides?: CallOverrides
-    ): Promise<[string, string] & { ID: string; Name: string }>;
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
 
     "events(uint256)"(
       arg0: BigNumberish,
       overrides?: CallOverrides
-    ): Promise<[string, string] & { ID: string; Name: string }>;
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
 
-    findEventByID(_eventID: string, overrides?: CallOverrides): Promise<void>;
-
-    "findEventByID(string)"(
-      _eventID: string,
+    eventsMap(
+      arg0: string,
       overrides?: CallOverrides
-    ): Promise<void>;
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
+
+    "eventsMap(string)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
+
+    findEventById(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
+
+    "findEventById(string)"(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<
+      [string, string, boolean] & { id: string; name: string; exists: boolean }
+    >;
   };
 
   filters: {};
 
   estimateGas: {
     createEvent(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
     "createEvent(string,string)"(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
@@ -214,26 +286,33 @@ export class Events extends Contract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    findEventByID(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+    eventsMap(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    "eventsMap(string)"(
+      arg0: string,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    "findEventByID(string)"(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+    findEventById(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
+    "findEventById(string)"(
+      _eventId: string,
+      overrides?: CallOverrides
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     createEvent(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
     "createEvent(string,string)"(
-      _ID: string,
+      _id: string,
       _name: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
@@ -248,14 +327,24 @@ export class Events extends Contract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    findEventByID(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+    eventsMap(
+      arg0: string,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    "findEventByID(string)"(
-      _eventID: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+    "eventsMap(string)"(
+      arg0: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    findEventById(
+      _eventId: string,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
+    "findEventById(string)"(
+      _eventId: string,
+      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }
