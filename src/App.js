@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import Events from "./artifacts/contracts/Events.sol/Events.json";
 // import Token from "./artifacts/contracts/Token.sol/Token.json";
 
-const eventAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const eventAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
 // const tokenAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
       console.log({ provider });
       const contract = new ethers.Contract(eventAddress, Events.abi, provider);
       try {
-        const data = await contract.greet();
+        const data = await contract.findEventById(eventId);
+        console.log("eventId", eventId);
         console.log("data: ", data);
       } catch (err) {
         console.log("Error: ", err);
@@ -73,7 +74,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <br />
-        <button onClick={createEvent}>Create Event</button>
         <input
           onChange={(e) => setEventId(e.target.value)}
           placeholder="Set event ID"
@@ -82,9 +82,11 @@ function App() {
           onChange={(e) => setEventName(e.target.value)}
           placeholder="Set event's name"
         />
+        <button onClick={createEvent}>Create Event</button>
         <br />
-        <button onClick={findEventById}>Find Event</button>
         <input placeholder="Event ID" />
+        <button onClick={findEventById}>Find Event</button>
+
         {/* <button onClick={getBalance}>Get Balance</button>
         <button onClick={sendCoins}>Send Coins</button>
         <input
