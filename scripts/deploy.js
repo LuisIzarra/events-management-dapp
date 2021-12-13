@@ -11,7 +11,7 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const Events = await hre.ethers.getContractFactory("Events");
-  const greeterDeploy = await Events.deploy("Hello, World!");
+  const greeterDeploy = await Events.deploy();
 
   // const Token = await hre.ethers.getContractFactory("Token");
   // const token = await Token.deploy();
