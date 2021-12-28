@@ -22,20 +22,27 @@ contract Events {
             bool exists
         )
     {
-        Event memory _event = eventsMap[_eventId];
+        // Event memory _event = eventsMap[_eventId];
 
-        if (_event.exists) {
-            return (_event.id, _event.name, _event.exists);
+        if (eventsMap[_eventId].exists) {
+            console.log("here 0");
+            return (
+                eventsMap[_eventId].id,
+                eventsMap[_eventId].name,
+                eventsMap[_eventId].exists
+            );
         }
-
+        console.log("here 1");
         return ("", "", false);
     }
 
     function createEvent(string memory _id, string memory _name) public {
-        Event memory _event = Event(_id, _name, true);
+        // Event memory _event = Event(_id, _name, true);
 
-        events.push(_event);
-
-        eventsMap[_id] = _event;
+        // events.push(_event);
+        console.log(_id, _name);
+        eventsMap[_id].name = _name;
+        eventsMap[_id].id = _id;
+        eventsMap[_id].exists = true;
     }
 }

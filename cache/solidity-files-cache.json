@@ -249,8 +249,8 @@
       ]
     },
     "/Users/luisrodriguez/events-management-dapp/contracts/Events.sol": {
-      "lastModificationDate": 1638376245340,
-      "contentHash": "306aa71bec05d311bd61629647d77840",
+      "lastModificationDate": 1640137763528,
+      "contentHash": "2af734b146ea3405ff02f8de0040101b",
       "sourceName": "contracts/Events.sol",
       "solcConfig": {
         "version": "0.8.3",

@@ -10,6 +10,7 @@ const eventAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 function App() {
   const [eventName, setEventName] = useState();
   const [eventId, setEventId] = useState();
+  const [findEventId, setFindEventId] = useState();
   // const [userAccount, setUserAccount] = useState();
   // const [amount, setAmount] = useState();
 
@@ -17,7 +18,7 @@ function App() {
     await window.ethereum.request({ method: "eth_requestAccounts" });
   }
 
-  async function findEventById() {
+  async function findEventById(eventId) {
     if (typeof window.ethereum !== "undefined") {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       console.log({ provider });
@@ -52,9 +53,10 @@ function App() {
       console.log({ provider });
       const signer = provider.getSigner();
       const contract = new ethers.Contract(eventAddress, Events.abi, signer);
-      const transaction = await contract.createEvent(eventName, eventId);
+      const transaction = await contract.createEvent(eventId, eventName);
       await transaction.wait();
-      findEventById();
+
+      findEventById(eventId);
     }
   }
 
@@ -84,8 +86,11 @@ function App() {
         />
         <button onClick={createEvent}>Create Event</button>
         <br />
-        <input placeholder="Event ID" />
-        <button onClick={findEventById}>Find Event</button>
+        <input
+          onChange={(e) => setFindEventId(e.target.value)}
+          placeholder="Event ID"
+        />
+        <button onClick={(e) => findEventById(findEventId)}>Find Event</button>
 
         {/* <button onClick={getBalance}>Get Balance</button>
         <button onClick={sendCoins}>Send Coins</button>
