@@ -75,6 +75,23 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className="title">Event's Management</h1>
+        <p className="paragraph">
+          Basic dapp to start smart contract development with Ethereum. I think
+          is the best stack for building full stack dApps with Solidity. Full
+          code is in the following{" "}
+          <a
+            href="https://github.com/LuisIzarra/events-management-dapp"
+            target="_blank"
+            rel="noreferrer"
+          >
+            link
+          </a>
+        </p>
+        <p>
+          You could do and interact with Metamask creating an event, and find
+          this event as well.
+        </p>
         <br />
         <input
           onChange={(e) => setEventId(e.target.value)}
